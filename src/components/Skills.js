@@ -13,14 +13,14 @@ import StorageIcon from '@mui/icons-material/Storage';
 import BuildIcon from '@mui/icons-material/Build';
 import LanguageIcon from '@mui/icons-material/Language';
 import EmojiObjectsIcon from '@mui/icons-material/EmojiObjects';
-import { Fade } from 'react-awesome-reveal'; // Install react-awesome-reveal
+import { Fade } from 'react-awesome-reveal'; 
 
 export default function SkillsTimeline({theme}) {
   const isDark = theme === 'dark';
   return (
     <section
     style={{
-      backgroundColor: isDark ? '#1a202c' : '#f9f9f9',
+      backgroundColor: isDark ? '#111827' : '#e5e7eb',
       color: isDark ? 'white' : '#1a202c',
       padding: '2rem',
     }} id='skills'
@@ -45,7 +45,6 @@ export default function SkillsTimeline({theme}) {
           paddingX: { xs: 2, sm: 4, md: 8, lg: 12 }, 
         }}
       >
-        {/* Frontend Development */}
         <TimelineItem sx={{ marginBottom: '2rem' }}>
           <TimelineOppositeContent
             sx={{
@@ -93,7 +92,6 @@ export default function SkillsTimeline({theme}) {
           </TimelineContent>
         </TimelineItem>
 
-        {/* Backend Development */}
         <TimelineItem sx={{ marginBottom: '2rem' }}>
           <TimelineOppositeContent
             sx={{
@@ -141,7 +139,6 @@ export default function SkillsTimeline({theme}) {
           </TimelineContent>
         </TimelineItem>
 
-        {/* Tools */}
         <TimelineItem sx={{ marginBottom: '2rem' }}>
           <TimelineOppositeContent
             sx={{
@@ -187,7 +184,6 @@ export default function SkillsTimeline({theme}) {
           </TimelineContent>
         </TimelineItem>
 
-        {/* Languages */}
         <TimelineItem sx={{ marginBottom: '2rem' }}>
           <TimelineOppositeContent
             sx={{
@@ -229,7 +225,6 @@ export default function SkillsTimeline({theme}) {
           </TimelineContent>
         </TimelineItem>
 
-        {/* Others */}
         <TimelineItem sx={{ marginBottom: '2rem' }}>
           <TimelineOppositeContent
             sx={{

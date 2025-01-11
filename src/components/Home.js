@@ -9,9 +9,7 @@ const Home = ({ theme }) => {
         isLightTheme ? 'bg-gray-200 text-gray-900' : 'bg-gray-900 text-white'
       }`} id='about'
     >
-      {/* Main Section */}
       <section className="flex flex-col lg:flex-row xl:flex-row items-center justify-between max-w-6xl mx-auto py-12 px-8 space-y-12 lg:space-y-0 lg:space-x-16 mt-10">
-        {/* Profile Section */}
         <div className="flex flex-col items-center lg:items-start">
           <img
             src="/assets/proto_dp.png"
@@ -40,9 +38,7 @@ const Home = ({ theme }) => {
           </div>
         </div>
 
-        {/* Stats and Buttons Section */}
         <div className="flex flex-col items-center w-full lg:items-center">
-          {/* Stats Section */}
           <div className="grid grid-cols-2 gap-6 lg:grid-cols-4">
             <div
               className={`p-6 rounded-lg shadow-lg text-center ${
@@ -56,7 +52,7 @@ const Home = ({ theme }) => {
                   isLightTheme ? 'text-blue-500' : 'text-blue-400'
                 }`}
               >
-                50+
+                60+
               </h4>
               <p>Commits</p>
             </div>
@@ -72,7 +68,7 @@ const Home = ({ theme }) => {
                   isLightTheme ? 'text-blue-500' : 'text-blue-400'
                 }`}
               >
-                3+
+                2
               </h4>
               <p>Projects</p>
             </div>
@@ -110,7 +106,6 @@ const Home = ({ theme }) => {
             </div>
           </div>
 
-          {/* Buttons Section */}
           <div className="mt-8 flex justify-center w-full">
             <div className="flex space-x-6">
               <a

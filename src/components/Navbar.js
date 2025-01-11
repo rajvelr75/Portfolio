@@ -29,12 +29,10 @@ const Navbar = ({ toggleTheme, currentTheme }) => {
   return (
     <nav className="px-4 py-2 fixed top-0 w-full z-10 shadow-md bg-gray-900">
       <div className="container mx-auto flex justify-between items-center">
-        {/* Logo */}
         <div className="text-2xl font-bold text-white">
           Portfolio
         </div>
 
-        {/* Desktop Menu */}
         <div className="hidden md:flex space-x-4">
           <ul className="flex space-x-4">
             <li>
@@ -59,7 +57,7 @@ const Navbar = ({ toggleTheme, currentTheme }) => {
             </li>
             <li>
               <Link
-                to="resume"
+                to="projects"
                 smooth={true}
                 offset={-70}
                 className="cursor-pointer text-white hover:text-blue-400"
@@ -79,6 +77,16 @@ const Navbar = ({ toggleTheme, currentTheme }) => {
             </li>
             <li>
               <Link
+                to="academics"
+                smooth={true}
+                offset={-70}
+                className="cursor-pointer text-white hover:text-blue-400"
+              >
+                Education
+              </Link>
+            </li>
+            <li>
+              <Link
                 to="contact"
                 smooth={true}
                 offset={-70}
@@ -90,7 +98,6 @@ const Navbar = ({ toggleTheme, currentTheme }) => {
           </ul>
         </div>
 
-        {/* Theme Toggle Button */}
         <button
           onClick={toggleTheme}
           className="px-4 py-2 rounded-md shadow-md bg-blue-600 text-white hover:bg-blue-700 transition duration-200 flex items-center"
@@ -98,13 +105,11 @@ const Navbar = ({ toggleTheme, currentTheme }) => {
           {currentTheme === 'dark' ? <FaSun size={20} /> : <FaMoon size={20} />}
         </button>
 
-        {/* Hamburger Menu Icon (for small screens) */}
         <div className="md:hidden z-30" onClick={toggleMenu}>
           {menuOpen ? <FaTimes size={30} /> : <FaBars size={30} />}
         </div>
       </div>
 
-      {/* Mobile Menu */}
       <div
         ref={menuRef}
         className={`fixed top-0 right-0 h-full w-3/5 bg-gray-800 transform ${
@@ -136,7 +141,7 @@ const Navbar = ({ toggleTheme, currentTheme }) => {
           </li>
           <li>
             <Link
-              to="resume"
+              to="projects"
               smooth={true}
               offset={-70}
               onClick={toggleMenu}
@@ -154,6 +159,16 @@ const Navbar = ({ toggleTheme, currentTheme }) => {
             >
               Resume
             </a>
+          </li>
+          <li>
+              <Link
+                to="academics"
+                smooth={true}
+                offset={-70}
+                className="cursor-pointer text-white hover:text-blue-400"
+              >
+                Education
+              </Link>
           </li>
           <li>
             <Link

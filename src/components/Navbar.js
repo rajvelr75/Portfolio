@@ -1,0 +1,175 @@
+import React, { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-scroll';
+import { FaBars, FaTimes, FaMoon, FaSun } from 'react-icons/fa';
+
+const Navbar = ({ toggleTheme, currentTheme }) => {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const menuRef = useRef(null);
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
+  useEffect(() => {
+    const handleOutsideClick = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setMenuOpen(false);
+      }
+    };
+    if (menuOpen) {
+      document.addEventListener('mousedown', handleOutsideClick);
+    } else {
+      document.removeEventListener('mousedown', handleOutsideClick);
+    }
+    return () => {
+      document.removeEventListener('mousedown', handleOutsideClick);
+    };
+  }, [menuOpen]);
+
+  return (
+    <nav className="px-4 py-2 fixed top-0 w-full z-10 shadow-md bg-gray-900">
+      <div className="container mx-auto flex justify-between items-center">
+        {/* Logo */}
+        <div className="text-2xl font-bold text-white">
+          Portfolio
+        </div>
+
+        {/* Desktop Menu */}
+        <div className="hidden md:flex space-x-4">
+          <ul className="flex space-x-4">
+            <li>
+              <Link
+                to="about"
+                smooth={true}
+                offset={-70}
+                className="cursor-pointer text-white hover:text-blue-400"
+              >
+                About
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="skills"
+                smooth={true}
+                offset={-70}
+                className="cursor-pointer text-white hover:text-blue-400"
+              >
+                Skills
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="resume"
+                smooth={true}
+                offset={-70}
+                className="cursor-pointer text-white hover:text-blue-400"
+              >
+                Projects
+              </Link>
+            </li>
+            <li>
+              <a
+                href="src/assets/Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="cursor-pointer text-white hover:text-blue-400"
+              >
+                Resume
+              </a>
+            </li>
+            <li>
+              <Link
+                to="contact"
+                smooth={true}
+                offset={-70}
+                className="cursor-pointer text-white hover:text-blue-400"
+              >
+                Contact
+              </Link>
+            </li>
+          </ul>
+        </div>
+
+        {/* Theme Toggle Button */}
+        <button
+          onClick={toggleTheme}
+          className="px-4 py-2 rounded-md shadow-md bg-blue-600 text-white hover:bg-blue-700 transition duration-200 flex items-center"
+        >
+          {currentTheme === 'dark' ? <FaSun size={20} /> : <FaMoon size={20} />}
+        </button>
+
+        {/* Hamburger Menu Icon (for small screens) */}
+        <div className="md:hidden z-30" onClick={toggleMenu}>
+          {menuOpen ? <FaTimes size={30} /> : <FaBars size={30} />}
+        </div>
+      </div>
+
+      {/* Mobile Menu */}
+      <div
+        ref={menuRef}
+        className={`fixed top-0 right-0 h-full w-3/5 bg-gray-800 transform ${
+          menuOpen ? 'translate-x-0' : 'translate-x-full'
+        } transition-transform duration-300 ease-in-out md:hidden z-20 shadow-lg`}
+      >
+        <ul className="flex flex-col items-center mt-16 space-y-6 text-lg">
+          <li>
+            <Link
+              to="about"
+              smooth={true}
+              offset={-70}
+              onClick={toggleMenu}
+              className="cursor-pointer text-white hover:text-blue-400"
+            >
+              About
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="skills"
+              smooth={true}
+              offset={-70}
+              onClick={toggleMenu}
+              className="cursor-pointer text-white hover:text-blue-400"
+            >
+              Skills
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="resume"
+              smooth={true}
+              offset={-70}
+              onClick={toggleMenu}
+              className="cursor-pointer text-white hover:text-blue-400"
+            >
+              Projects
+            </Link>
+          </li>
+          <li>
+            <a
+              href="src/assets/Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="cursor-pointer text-white hover:text-blue-400"
+            >
+              Resume
+            </a>
+          </li>
+          <li>
+            <Link
+              to="contact"
+              smooth={true}
+              offset={-70}
+              onClick={toggleMenu}
+              className="cursor-pointer text-white hover:text-blue-400"
+            >
+              Contact
+            </Link>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  );
+};
+
+export default Navbar;

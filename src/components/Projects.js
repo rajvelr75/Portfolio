@@ -1,30 +1,31 @@
-import React, { useState } from 'react';
-
 const Projects = ({ theme }) => {
   const isLightTheme = theme === 'light';
-  const [selectedProject, setSelectedProject] = useState(null);
 
   const projects = [
     {
       id: 1,
       title: 'Web Chat Application',
-      image: '/assets/chat_app.jpeg', 
+      image: '/assets/chat_app.jpeg',
       description:
         'A real-time web chat application with user authentication, message encryption, and responsive UI for seamless communication.',
+      github: 'https://github.com/rajvelr75/Chat-App',
+      deploy: 'https://chat-app-9r2.pages.dev/',
     },
     {
       id: 2,
       title: 'User Database Management',
-      image: '/assets/database.jpg', 
+      image: '/assets/database.jpg',
       description:
         'A system to manage user data efficiently, offering CRUD operations, search functionality, and data visualization.',
+      github: 'https://github.com/rajvelr75/User-Database',
     },
     {
       id: 3,
-      title: 'Password Checker',
-      image: '/assets/password.jpg', 
+      title: 'Password Validator',
+      image: '/assets/password.jpg',
       description:
-        'A tool to analyze password strength, detect vulnerabilities, and provide recommendations for enhanced security.',
+        'Designed and implemented a robust database management system, optimizing data storage, retrieval, and management for efficient operations.',
+      github: 'https://github.com/rajvelr75/Password-Checker',
     },
   ];
 
@@ -35,66 +36,67 @@ const Projects = ({ theme }) => {
       }`}
       id="projects"
     >
-      <h2 className="text-4xl font-bold mb-8">My Projects</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl px-8">
-        {projects.map((project) => (
-          <div
-            key={project.id}
-            className={`p-6 rounded-lg shadow-lg cursor-pointer transition transform hover:scale-105 ${
-              isLightTheme
-                ? 'bg-white text-black'
-                : 'bg-gray-800 text-gray-300'
-            }`}
-            onClick={() => setSelectedProject(project)}
-          >
-            <img
-              src={project.image}
-              alt={project.title}
-              className="w-full h-40 object-cover rounded-md mb-4"
-            />
-            <h3
-              className={`text-2xl font-semibold ${
-                isLightTheme ? 'text-blue-500' : 'text-blue-400'
-              }`}
-            >
-              {project.title}
-            </h3>
-          </div>
-        ))}
-      </div>
+      <h2 className="text-4xl font-bold mb-20">My Projects</h2>
 
-      {selectedProject && (
-        <div
-          className={`fixed inset-0 flex items-center justify-center bg-black bg-opacity-50`}
-        >
-          <div
-            className={`max-w-lg p-6 rounded-lg shadow-lg ${
-              isLightTheme
-                ? 'bg-white text-black'
-                : 'bg-gray-800 text-gray-300'
-            }`}
-          >
-            <h3
-              className={`text-3xl font-bold ${
-                isLightTheme ? 'text-blue-500' : 'text-blue-400'
+      <div className="w-full max-w-6xl px-8">
+        <div className="flex flex-wrap justify-center">
+          {projects.map((project, index) => (
+            <div
+              key={project.id}
+              className={`flex flex-col lg:flex-row mb-8 p-8 rounded-lg shadow-lg transition-transform hover:scale-105 w-full max-w-3xl ${
+                isLightTheme ? 'bg-gray-100 text-black' : 'bg-gray-800 text-gray-300'
               }`}
             >
-              {selectedProject.title}
-            </h3>
-            <p className="mt-4">{selectedProject.description}</p>
-            <button
-              className={`mt-6 px-4 py-2 font-semibold rounded-lg shadow-lg transition ${
-                isLightTheme
-                  ? 'bg-blue-500 text-white hover:bg-blue-600'
-                  : 'bg-blue-400 text-white hover:bg-blue-500'
-              }`}
-              onClick={() => setSelectedProject(null)}
-            >
-              Close
-            </button>
-          </div>
+              <div className="w-full lg:w-1/3 h-56 lg:h-auto mb-4 lg:mb-0 flex justify-center">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover rounded-md"
+                />
+              </div>
+
+              <div className="w-full lg:w-2/3 pl-0 lg:pl-8">
+                <h3
+                  className={`text-2xl font-semibold mb-4 ${
+                    isLightTheme ? 'text-blue-500' : 'text-blue-400'
+                  }`}
+                >
+                  {project.title}
+                </h3>
+                <p className="text-lg mb-4">{project.description}</p>
+
+                <div className="flex flex-col space-y-2">
+                  <div className="flex items-center space-x-2">
+                    <h3 className="font-semibold">Github Link:</h3>
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-500 hover:text-blue-600"
+                    >
+                      {project.github}
+                    </a>
+                  </div>
+
+                  {project.deploy && (
+                    <div className="flex items-center space-x-2">
+                      <h3 className="font-semibold">Deployment Link:</h3>
+                      <a
+                        href={project.deploy}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-blue-500 hover:text-blue-600"
+                      >
+                        {project.deploy}
+                      </a>
+                    </div>
+                  )}
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
-      )}
+      </div>
     </div>
   );
 };

@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
+import { RiMailSendFill } from "react-icons/ri";
+import { FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa";
+import { SiLeetcode } from "react-icons/si";
 
 const Contact = ({ theme }) => {
   const [formData, setFormData] = useState({
@@ -60,22 +63,21 @@ const Contact = ({ theme }) => {
   };
 
   return (
-    
     <div
       className={`min-h-screen flex flex-col items-center justify-center ${
         isLightTheme ? 'bg-gray-200 text-gray-900' : 'bg-gray-900 text-white'
       }`}
       id="contact"
     >
-                <h2
-          className={`text-4xl font-bold text-center mb-6 ${
-            isLightTheme ? 'text-gray-900' : 'text-white'
-          }`}
-        >
-          Contact Me
-        </h2>
+      <h2
+        className={`text-4xl font-bold text-center mb-6 ${
+          isLightTheme ? 'text-gray-900' : 'text-white'
+        }`}
+      >
+        Contact Me
+      </h2>
       <div
-        className={`w-6/12 px-6 py-10 rounded-lg shadow-lg ${
+        className={`w-11/12 lg:w-5/12 px-6 py-6 rounded-lg shadow-lg ${
           isLightTheme ? 'bg-white' : 'bg-gray-800'
         }`}
       >
@@ -115,7 +117,7 @@ const Contact = ({ theme }) => {
               value={formData.message}
               onChange={handleChange}
               rows="5"
-              className={`w-full px-4 py-2 rounded-lg shadow-md focus:outline-none ${
+              className={`w-full px-4 rounded-lg shadow-md focus:outline-none ${
                 isLightTheme
                   ? 'bg-gray-100 border border-gray-300'
                   : 'bg-gray-700 text-white border border-gray-600'
@@ -126,15 +128,83 @@ const Contact = ({ theme }) => {
           {success && <p className="text-green-500 text-center">{success}</p>}
           <button
             type="submit"
-            className={`w-full py-3 font-semibold rounded-lg shadow-md transition ${
+            className={`w-full flex items-center justify-center gap-2 py-3 font-semibold rounded-lg shadow-md transition-transform transform ${
               isLightTheme
-                ? 'bg-blue-500 text-white hover:bg-blue-600'
-                : 'bg-blue-400 text-white hover:bg-blue-500'
+                ? "bg-blue-500 text-white hover:bg-blue-600 hover:scale-105"
+                : "bg-blue-400 text-white hover:bg-blue-500 hover:scale-105"
             }`}
           >
-            Send Message
+            <RiMailSendFill className="text-xl" />
+            <span>Send</span>
           </button>
         </form>
+      </div>
+
+      <div
+        className={`text-center mt-10 ${
+          isLightTheme ? 'text-gray-900' : 'text-gray-300'
+        }`}
+      >
+        <p className="text-md">
+          Let's Collaborate: Connect for Professional Growth
+        </p>
+      </div>
+
+      <div
+        className={`py-4 px-4 ${
+          isLightTheme ? 'bg-gray-200 text-gray-900' : 'bg-gray-900 text-white'
+        }`}
+      >
+        <div className="flex justify-center space-x-6">
+          <a
+            href="https://www.instagram.com/rajvels75/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`text-2xl transition-transform transform hover:scale-110 ${
+              isLightTheme
+                ? 'text-gray-600 hover:text-pink-500'
+                : 'text-gray-400 hover:text-pink-400'
+            }`}
+          >
+            <FaInstagram />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/rajvels75/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`text-2xl transition-transform transform hover:scale-110 ${
+              isLightTheme
+                ? 'text-gray-600 hover:text-blue-500'
+                : 'text-gray-400 hover:text-blue-400'
+            }`}
+          >
+            <FaLinkedin />
+          </a>
+          <a
+            href="https://github.com/rajvelr75"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`text-2xl transition-transform transform hover:scale-110 ${
+              isLightTheme
+                ? 'text-gray-600 hover:text-gray-800'
+                : 'text-gray-400 hover:text-white'
+            }`}
+          >
+            <FaGithub />
+          </a>
+          <a
+            href="https://leetcode.com/u/rajvels75/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`text-2xl transition-transform transform hover:scale-110 ${
+              isLightTheme
+                ? 'text-gray-600 hover:text-yellow-500'
+                : 'text-gray-400 hover:text-yellow-400'
+            }`}
+          >
+            <SiLeetcode />
+          </a>
+        </div>
       </div>
     </div>
   );

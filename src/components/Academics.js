@@ -40,7 +40,7 @@ const Academics = ({ theme }) => {
         <h1
           className={`text-4xl font-bold text-center mb-12 ${isLightTheme ? 'text-gray-800' : 'text-white'}`}
         >
-          Academic Background
+          Academics
         </h1>
 
         <div className="space-y-10">

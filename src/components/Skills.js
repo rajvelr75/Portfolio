@@ -132,7 +132,7 @@ export default function SkillsTimeline({theme}) {
                     fontSize: { xs: '0.9rem', sm: '1rem', md: '1.25rem' },
                   }}
                 >
-                  Firebase | Firestore
+                  Firebase | Flask
                 </Typography>
               </Box>
             </Fade>
@@ -236,7 +236,7 @@ export default function SkillsTimeline({theme}) {
             align="right"
           >
             <Fade direction="left">
-              Others
+              Database
             </Fade>
           </TimelineOppositeContent>
           <TimelineSeparator>
@@ -259,7 +259,7 @@ export default function SkillsTimeline({theme}) {
                 }}
               >
                 <Typography variant="h6" component="span">
-                  Problem Solving 
+                  MySQL | MongoDB
                 </Typography>
               </Box>
             </Fade>

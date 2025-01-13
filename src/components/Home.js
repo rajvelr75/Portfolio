@@ -1,6 +1,7 @@
 import React from 'react';
 import { FaInstagram, FaLinkedin, FaGithub } from 'react-icons/fa';
 import { SiLeetcode } from 'react-icons/si';
+import { Link } from 'react-scroll';
 
 const Home = ({ theme }) => {
   const isLightTheme = theme === 'light';
@@ -55,7 +56,7 @@ const Home = ({ theme }) => {
                   isLightTheme ? 'text-blue-500' : 'text-blue-400'
                 }`}
               >
-                60+
+                70+
               </h4>
               <p>Commits</p>
             </div>
@@ -110,20 +111,22 @@ const Home = ({ theme }) => {
           </div>
 
           <div className="mt-8 flex flex-col items-center w-full">
-            {/* Buttons */}
             <div className="flex space-x-6">
-              <a
-                href="#hire"
-                className={`px-6 py-3 font-semibold rounded-lg shadow-md transition ${
+              <Link
+                to="contact"
+                smooth={true}
+                offset={-70}
+                className={`px-6 py-3 cursor-pointer font-semibold rounded-lg shadow-md transition ${
                   isLightTheme
                     ? 'bg-blue-500 text-white hover:bg-blue-600 hover:text-black'
                     : 'bg-blue-400 text-white hover:bg-blue-500 hover:text-black'
                 }`}
               >
                 Hire Me
-              </a>
+              </Link>
               <a
-                href="#resume"
+                href="/assets/_Resume.pdf"
+                target="_blank"
                 className={`px-6 py-3 font-semibold rounded-lg shadow-md transition ${
                   isLightTheme
                     ? 'bg-blue-500 text-white hover:bg-blue-600 hover:text-black'
@@ -134,7 +137,6 @@ const Home = ({ theme }) => {
               </a>
             </div>
 
-            {/* Social Media Icons */}
             <div className="mt-6 text-center">
               <p
                 className={`text-lg font-medium ${
@@ -145,19 +147,19 @@ const Home = ({ theme }) => {
               </p>
               <div className="flex space-x-6 mt-4">
                 <a
-                  href="https://instagram.com"
+                  href="https://www.instagram.com/rajvels75/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`text-2xl ${
                     isLightTheme
-                      ? 'text-gray-600 hover:text-blue-500'
-                      : 'text-gray-400 hover:text-blue-400'
+                      ? 'text-gray-600 hover:text-pink-600'
+                      : 'text-gray-400 hover:text-pink-400'
                   }`}
                 >
                   <FaInstagram />
                 </a>
                 <a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/in/rajvels75/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`text-2xl ${
@@ -169,25 +171,25 @@ const Home = ({ theme }) => {
                   <FaLinkedin />
                 </a>
                 <a
-                  href="https://github.com"
+                  href="https://github.com/rajvelr75"
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`text-2xl ${
                     isLightTheme
-                      ? 'text-gray-600 hover:text-blue-500'
-                      : 'text-gray-400 hover:text-blue-400'
+                      ? 'text-gray-600 hover:text-gray-400'
+                      : 'text-gray-400 hover:text-white'
                   }`}
                 >
                   <FaGithub />
                 </a>
                 <a
-                  href="https://leetcode.com"
+                  href="https://leetcode.com/u/rajvels75/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`text-2xl ${
                     isLightTheme
-                      ? 'text-gray-600 hover:text-blue-500'
-                      : 'text-gray-400 hover:text-blue-400'
+                      ? 'text-gray-600 hover:text-yellow-500'
+                      : 'text-gray-400 hover:text-yellow-400'
                   }`}
                 >
                   <SiLeetcode />

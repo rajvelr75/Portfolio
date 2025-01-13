@@ -67,23 +67,13 @@ const Navbar = ({ toggleTheme, currentTheme }) => {
               </Link>
             </li>
             <li>
-              <a
-                href="/assets/_Resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="cursor-pointer text-white hover:text-blue-400"
-              >
-                Resume
-              </a>
-            </li>
-            <li>
               <Link
                 to="academics"
                 smooth={true}
                 offset={-70}
                 className="cursor-pointer text-white hover:text-blue-400"
               >
-                Education
+                Academics
               </Link>
             </li>
             <li>
@@ -152,16 +142,6 @@ const Navbar = ({ toggleTheme, currentTheme }) => {
             </Link>
           </li>
           <li>
-            <a
-              href="/assets/_Resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="cursor-pointer text-white hover:text-blue-400"
-            >
-              Resume
-            </a>
-          </li>
-          <li>
             <Link
               to="academics"
               smooth={true}
@@ -169,7 +149,7 @@ const Navbar = ({ toggleTheme, currentTheme }) => {
               onClick={toggleMenu}
               className="cursor-pointer text-white hover:text-blue-400"
             >
-              Education
+              Academics
             </Link>
           </li>
           <li>

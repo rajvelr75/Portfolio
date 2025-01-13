@@ -1,4 +1,6 @@
 import React from 'react';
+import { FaInstagram, FaLinkedin, FaGithub } from 'react-icons/fa';
+import { SiLeetcode } from 'react-icons/si';
 
 const Home = ({ theme }) => {
   const isLightTheme = theme === 'light';
@@ -7,7 +9,8 @@ const Home = ({ theme }) => {
     <div
       className={`min-h-screen flex items-center justify-center ${
         isLightTheme ? 'bg-gray-200 text-gray-900' : 'bg-gray-900 text-white'
-      }`} id='about'
+      }`}
+      id="about"
     >
       <section className="flex flex-col lg:flex-row xl:flex-row items-center justify-between max-w-6xl mx-auto py-12 px-8 space-y-12 lg:space-y-0 lg:space-x-16 mt-10">
         <div className="flex flex-col items-center lg:items-start">
@@ -106,28 +109,90 @@ const Home = ({ theme }) => {
             </div>
           </div>
 
-          <div className="mt-8 flex justify-center w-full">
+          <div className="mt-8 flex flex-col items-center w-full">
+            {/* Buttons */}
             <div className="flex space-x-6">
               <a
                 href="#hire"
-                className={`px-6 py-3 font-semibold rounded-lg shadow-lg transition ${
+                className={`px-6 py-3 font-semibold rounded-lg shadow-md transition ${
                   isLightTheme
-                    ? 'bg-white text-black hover:bg-blue-100'
-                    : 'bg-black text-white hover:bg-blue-100'
+                    ? 'bg-blue-500 text-white hover:bg-blue-600 hover:text-black'
+                    : 'bg-blue-400 text-white hover:bg-blue-500 hover:text-black'
                 }`}
               >
                 Hire Me
               </a>
               <a
                 href="#resume"
-                className={`px-6 py-3 font-semibold rounded-lg shadow-lg transition ${
+                className={`px-6 py-3 font-semibold rounded-lg shadow-md transition ${
                   isLightTheme
-                    ? 'bg-white text-black hover:bg-blue-100'
-                    : 'bg-black text-white hover:bg-blue-100'
+                    ? 'bg-blue-500 text-white hover:bg-blue-600 hover:text-black'
+                    : 'bg-blue-400 text-white hover:bg-blue-500 hover:text-black'
                 }`}
               >
                 Resume
               </a>
+            </div>
+
+            {/* Social Media Icons */}
+            <div className="mt-6 text-center">
+              <p
+                className={`text-lg font-medium ${
+                  isLightTheme ? 'text-gray-800' : 'text-gray-300'
+                }`}
+              >
+                Follow Me On
+              </p>
+              <div className="flex space-x-6 mt-4">
+                <a
+                  href="https://instagram.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`text-2xl ${
+                    isLightTheme
+                      ? 'text-gray-600 hover:text-blue-500'
+                      : 'text-gray-400 hover:text-blue-400'
+                  }`}
+                >
+                  <FaInstagram />
+                </a>
+                <a
+                  href="https://linkedin.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`text-2xl ${
+                    isLightTheme
+                      ? 'text-gray-600 hover:text-blue-500'
+                      : 'text-gray-400 hover:text-blue-400'
+                  }`}
+                >
+                  <FaLinkedin />
+                </a>
+                <a
+                  href="https://github.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`text-2xl ${
+                    isLightTheme
+                      ? 'text-gray-600 hover:text-blue-500'
+                      : 'text-gray-400 hover:text-blue-400'
+                  }`}
+                >
+                  <FaGithub />
+                </a>
+                <a
+                  href="https://leetcode.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`text-2xl ${
+                    isLightTheme
+                      ? 'text-gray-600 hover:text-blue-500'
+                      : 'text-gray-400 hover:text-blue-400'
+                  }`}
+                >
+                  <SiLeetcode />
+                </a>
+              </div>
             </div>
           </div>
         </div>

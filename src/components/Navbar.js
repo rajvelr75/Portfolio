@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-scroll';
-import { FaBars, FaTimes, FaMoon, FaSun } from 'react-icons/fa';
+import { FaBars, FaTimes } from 'react-icons/fa';
+import { DarkModeSwitch } from 'react-toggle-dark-mode'; // Import DarkModeSwitch
 
 const Navbar = ({ toggleTheme, currentTheme }) => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -67,7 +68,7 @@ const Navbar = ({ toggleTheme, currentTheme }) => {
             </li>
             <li>
               <a
-                href="src/assets/Resume.pdf"
+                href="/assets/_Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="cursor-pointer text-white hover:text-blue-400"
@@ -98,12 +99,12 @@ const Navbar = ({ toggleTheme, currentTheme }) => {
           </ul>
         </div>
 
-        <button
-          onClick={toggleTheme}
-          className="px-4 py-2 rounded-md shadow-md bg-blue-600 text-white hover:bg-blue-700 transition duration-200 flex items-center"
-        >
-          {currentTheme === 'dark' ? <FaSun size={20} /> : <FaMoon size={20} />}
-        </button>
+        <DarkModeSwitch
+          checked={currentTheme !== 'dark'}
+          onChange={toggleTheme}
+          size={40}
+          className="flex items-center justify-center text-white"
+        />
 
         <div className="md:hidden z-30" onClick={toggleMenu}>
           {menuOpen ? <FaTimes size={30} /> : <FaBars size={30} />}
@@ -152,7 +153,7 @@ const Navbar = ({ toggleTheme, currentTheme }) => {
           </li>
           <li>
             <a
-              href="src/assets/Resume.pdf"
+              href="/assets/_Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="cursor-pointer text-white hover:text-blue-400"
@@ -161,14 +162,15 @@ const Navbar = ({ toggleTheme, currentTheme }) => {
             </a>
           </li>
           <li>
-              <Link
-                to="academics"
-                smooth={true}
-                offset={-70}
-                className="cursor-pointer text-white hover:text-blue-400"
-              >
-                Education
-              </Link>
+            <Link
+              to="academics"
+              smooth={true}
+              offset={-70}
+              onClick={toggleMenu}
+              className="cursor-pointer text-white hover:text-blue-400"
+            >
+              Education
+            </Link>
           </li>
           <li>
             <Link

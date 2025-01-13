@@ -5,9 +5,10 @@ import Navbar from './components/Navbar';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Academics from './components/Academics';
+import Contact from './components/Contact';
 
 function App() {
-  const [theme, setTheme] = useState('dark'); // Default theme is dark
+  const [theme, setTheme] = useState('dark'); 
 
   const toggleTheme = () => {
     setTheme(theme === 'dark' ? 'light' : 'dark');
@@ -20,6 +21,7 @@ function App() {
       <Skills theme={theme}/>
       <Projects theme ={theme}/>
       <Academics theme={theme}/>
+      <Contact theme= {theme}/>
     </div>
   );
 }

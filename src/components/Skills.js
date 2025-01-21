@@ -132,7 +132,7 @@ export default function SkillsTimeline({theme}) {
                     fontSize: { xs: '0.9rem', sm: '1rem', md: '1.25rem' },
                   }}
                 >
-                  Firebase | Flask
+                  Flask
                 </Typography>
               </Box>
             </Fade>
@@ -211,14 +211,20 @@ export default function SkillsTimeline({theme}) {
                 sx={{
                   backgroundColor: 'white',
                   color: '#1a202c',
-                  padding: '1rem',
-                  textAlign:'center',
+                  padding: { xs: '0.75rem', sm: '1rem' }, 
                   borderRadius: '8px',
                   boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
+                  textAlign: 'center',
                 }}
               >
-                <Typography variant="h6" component="span">
-                  Python | JavaScript 
+                <Typography
+                  variant="h6"
+                  component="span"
+                  sx={{
+                    fontSize: { xs: '0.9rem', sm: '1rem', md: '1.25rem' },
+                  }}
+                >
+                  Python | Javascript 
                 </Typography>
               </Box>
             </Fade>
@@ -252,14 +258,20 @@ export default function SkillsTimeline({theme}) {
                 sx={{
                   backgroundColor: 'white',
                   color: '#1a202c',
-                  padding: '1rem',
-                  textAlign:'center',
+                  padding: { xs: '0.75rem', sm: '1rem' },
                   borderRadius: '8px',
                   boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
+                  textAlign: 'center',
                 }}
               >
-                <Typography variant="h6" component="span">
-                  MySQL | MongoDB
+                <Typography
+                  variant="h6"
+                  component="span"
+                  sx={{
+                    fontSize: { xs: '0.9rem', sm: '1rem', md: '1.25rem' },
+                  }}
+                >
+                  Firebase 
                 </Typography>
               </Box>
             </Fade>

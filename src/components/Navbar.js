@@ -3,7 +3,7 @@ import { Link } from 'react-scroll';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { DarkModeSwitch } from 'react-toggle-dark-mode'; 
 
-const Navbar = ({ toggleTheme, currentTheme }) => {
+const Navbar = ({ toggleTheme, theme }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef(null);
 
@@ -90,10 +90,10 @@ const Navbar = ({ toggleTheme, currentTheme }) => {
         </div>
 
         <DarkModeSwitch
-          checked={currentTheme !== 'dark'}
+          checked={theme !== 'dark'}
           onChange={toggleTheme}
           size={40}
-          className="flex items-center justify-center relative right-8 md:right-0 text-white"
+          className="flex items-center justify-center relative right-7 md:right-0 text-white"
         />
 
         <div className="md:hidden z-30" onClick={toggleMenu}>

@@ -16,7 +16,7 @@ function App() {
 
   return (
     <div className={theme}>
-      <Navbar toggleTheme={toggleTheme} currentTheme={theme} />
+      <Navbar toggleTheme={toggleTheme} theme={theme} />
       <Home theme={theme} />
       <Skills theme={theme}/>
       <Projects theme ={theme}/>

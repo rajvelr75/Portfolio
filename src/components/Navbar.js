@@ -93,11 +93,11 @@ const Navbar = ({ toggleTheme, currentTheme }) => {
           checked={currentTheme !== 'dark'}
           onChange={toggleTheme}
           size={40}
-          className="flex items-center justify-center relative right-9 md:right-0 text-white"
+          className="flex items-center justify-center relative right-8 md:right-0 text-white"
         />
 
         <div className="md:hidden z-30" onClick={toggleMenu}>
-          {menuOpen ? <FaTimes size={30} /> : <FaBars size={30} />}
+          {menuOpen ? <FaTimes size={30} color='white'/> : <FaBars size={30} color='white'/>}
         </div>
       </div>
 

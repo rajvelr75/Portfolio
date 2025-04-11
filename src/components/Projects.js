@@ -8,7 +8,7 @@ const Projects = ({ theme }) => {
       image: '/assets/iam.jpg',
       description:
         'Identity Access Management (IAM) is a secure web application that manages user roles, permissions, and authentication. Built using Next.js and TypeScript, it ensures that only authorized users can access specific resources, enhancing data protection and system integrity.',
-      github: 'https://github.com/rajvelr75/Chat-App',
+      github: 'https://github.com/rajvelr75/IAM',
     },
     {
       id: 2,

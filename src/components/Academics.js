@@ -9,7 +9,7 @@ const Academics = ({ theme }) => {
       degree: 'M.C.A',
       institution: 'SRMIST Kattankulathur, Chennai',
       duration: '2023-25',
-      percentage: '8.50',
+      percentage: '8.46',
     },
     {
       degree: 'B.Sc Computer Science',
@@ -38,10 +38,12 @@ const Academics = ({ theme }) => {
     >
       <section className="w-9/12 mx-auto py-12 px-8">
         <h1
-          className={`text-4xl font-bold text-center mb-12 ${isLightTheme ? 'text-gray-800' : 'text-white'}`}
+          className={`text-4xl font-bold text-center mb-4 ${isLightTheme ? 'text-gray-800' : 'text-white'}`}
         >
           Academics
         </h1>
+        <div className={`w-20 h-1 mb-8 mx-auto ${isLightTheme ? 'bg-blue-600' : 'bg-blue-400'}`}></div>
+
 
         <div className="space-y-10">
           {academicDetails.map((item, index) => (

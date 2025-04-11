@@ -4,6 +4,14 @@ const Projects = ({ theme }) => {
   const projects = [
     {
       id: 1,
+      title: 'Identity Access Management',
+      image: '/assets/iam.jpg',
+      description:
+        'Identity Access Management (IAM) is a secure web application that manages user roles, permissions, and authentication. Built using Next.js and TypeScript, it ensures that only authorized users can access specific resources, enhancing data protection and system integrity.',
+      github: 'https://github.com/rajvelr75/Chat-App',
+    },
+    {
+      id: 2,
       title: 'Web Chat Application',
       image: '/assets/chat_app.jpeg',
       description:
@@ -12,7 +20,7 @@ const Projects = ({ theme }) => {
       deploy: 'https://chat-app-9r2.pages.dev/',
     },
     {
-      id: 2,
+      id: 3,
       title: 'User Database Management',
       image: '/assets/database.jpg',
       description:
@@ -20,7 +28,7 @@ const Projects = ({ theme }) => {
       github: 'https://github.com/rajvelr75/User-Database',
     },
     {
-      id: 3,
+      id: 4,
       title: 'Password Validator',
       image: '/assets/password.jpg',
       description:
@@ -36,8 +44,8 @@ const Projects = ({ theme }) => {
       }`}
       id="projects"
     >
-      <h2 className="text-4xl font-bold mb-20">My Projects</h2>
-
+      <h2 className="text-4xl font-bold mb-6">My Projects</h2>
+      <div className={`w-20 h-1 mb-10 mx-auto ${isLightTheme ? 'bg-blue-600' : 'bg-blue-400'}`}></div>
       <div className="w-full max-w-6xl px-8">
         <div className="flex flex-wrap justify-center">
           {projects.map((project, index) => (

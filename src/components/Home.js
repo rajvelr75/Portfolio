@@ -56,7 +56,7 @@ const Home = ({ theme }) => {
                   isLightTheme ? 'text-blue-500' : 'text-blue-400'
                 }`}
               >
-                70+
+                90+
               </h4>
               <p>Commits</p>
             </div>
@@ -72,7 +72,7 @@ const Home = ({ theme }) => {
                   isLightTheme ? 'text-blue-500' : 'text-blue-400'
                 }`}
               >
-                2
+                4
               </h4>
               <p>Projects</p>
             </div>
@@ -88,7 +88,7 @@ const Home = ({ theme }) => {
                   isLightTheme ? 'text-blue-500' : 'text-blue-400'
                 }`}
               >
-                8.5
+                8.46
               </h4>
               <p>CGPA</p>
             </div>
@@ -104,7 +104,7 @@ const Home = ({ theme }) => {
                   isLightTheme ? 'text-blue-500' : 'text-blue-400'
                 }`}
               >
-                80+
+                100+
               </h4>
               <p>Leetcode Problems</p>
             </div>
@@ -125,7 +125,7 @@ const Home = ({ theme }) => {
                 Hire Me
               </Link>
               <a
-                href="/assets/_Resume.pdf"
+                href="/assets/Resume.pdf"
                 target="_blank"
                 className={`px-6 py-3 font-semibold rounded-lg shadow-md transition ${
                   isLightTheme

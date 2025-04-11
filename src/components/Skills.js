@@ -17,6 +17,8 @@ import { Fade } from 'react-awesome-reveal';
 
 export default function SkillsTimeline({theme}) {
   const isDark = theme === 'dark';
+  const isLightTheme = theme === 'light';
+
   return (
     <section
     style={{
@@ -38,6 +40,8 @@ export default function SkillsTimeline({theme}) {
       >
         Areas Of Expertise
       </Typography>
+      <div className={`w-20 h-1 mb-4 mx-auto ${isLightTheme ? 'bg-blue-600' : 'bg-blue-400'}`}></div>
+
       <Timeline
         position="alternate"
         sx={{
@@ -177,7 +181,7 @@ export default function SkillsTimeline({theme}) {
                     fontSize: { xs: '0.9rem', sm: '1rem', md: '1.25rem' },
                   }}
                 >
-                  Git | GitHub | VS Code 
+                  Git | VS Code 
                 </Typography>
               </Box>
             </Fade>
@@ -224,7 +228,7 @@ export default function SkillsTimeline({theme}) {
                     fontSize: { xs: '0.9rem', sm: '1rem', md: '1.25rem' },
                   }}
                 >
-                  Python | Javascript 
+                  Python | Javascript | TypeScript
                 </Typography>
               </Box>
             </Fade>
@@ -271,7 +275,7 @@ export default function SkillsTimeline({theme}) {
                     fontSize: { xs: '0.9rem', sm: '1rem', md: '1.25rem' },
                   }}
                 >
-                  Firebase 
+                  Firebase | MongoDB
                 </Typography>
               </Box>
             </Fade>

@@ -6,6 +6,7 @@ import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Academics from './components/Academics';
 import Contact from './components/Contact';
+import Experience from './components/Experience';
 
 function App() {
   const [theme, setTheme] = useState('dark'); 
@@ -19,6 +20,7 @@ function App() {
       <Navbar toggleTheme={toggleTheme} theme={theme} />
       <Home theme={theme} />
       <Skills theme={theme}/>
+      <Experience theme={theme}/>
       <Projects theme ={theme}/>
       <Academics theme={theme}/>
       <Contact theme= {theme}/>

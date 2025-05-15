@@ -8,6 +8,15 @@ export default {
     extend: {
       colors: {
         'custom-blue': '#00ADFF',  
+      },
+      animation: {
+        "slide-up": "slide-up 0.3s ease-out",
+      },
+      keyframes: {
+        "slide-up": {
+          from: { opacity: "0", transform: "translateY(40px)" },
+          to: { opacity: "1", transform: "translateY(0)" },
+        },
       }
     },
   },

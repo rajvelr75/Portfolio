@@ -9,7 +9,7 @@ const Academics = ({ theme }) => {
       degree: 'M.C.A',
       institution: 'SRMIST Kattankulathur, Chennai',
       duration: '2023-25',
-      percentage: '8.46',
+      percentage: '8.73',
     },
     {
       degree: 'B.Sc Computer Science',

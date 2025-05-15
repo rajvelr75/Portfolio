@@ -7,6 +7,7 @@ import Projects from './components/Projects';
 import Academics from './components/Academics';
 import Contact from './components/Contact';
 import Experience from './components/Experience';
+import ChatBot from './components/Chatbot';
 
 function App() {
   const [theme, setTheme] = useState('dark'); 
@@ -24,6 +25,7 @@ function App() {
       <Projects theme ={theme}/>
       <Academics theme={theme}/>
       <Contact theme= {theme}/>
+      <ChatBot/>
     </div>
   );
 }

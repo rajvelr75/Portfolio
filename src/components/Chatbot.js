@@ -9,24 +9,31 @@ const ChatBot = () => {
   const toggleChat = () => setIsOpen(!isOpen);
 
   const sendMessage = async () => {
-    if (!input.trim()) return;
+  if (!input.trim()) return;
 
-    const userMessage = { sender: "user", text: input };
-    setMessages((prev) => [...prev, userMessage]);
-    setInput("");
+  const userMessage = { sender: "user", text: input };
+  setMessages((prev) => [...prev, userMessage]);
+  setInput("");
 
-    try {
-      const res = await axios.post(
-        "https://portfolio-backend-h28u.onrender.com",
-        { message: input }
-      );
-      const botReply = { sender: "bot", text: res.data.reply };
-      setMessages((prev) => [...prev, botReply]);
-    } catch {
-      const errorReply = { sender: "bot", text: "Something went wrong." };
-      setMessages((prev) => [...prev, errorReply]);
-    }
-  };
+  try {
+    const res = await axios.post(
+      "https://portfolio-backend-h28u.onrender.com/chat",
+      { message: input },
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    const botReply = { sender: "bot", text: res.data.reply };
+    setMessages((prev) => [...prev, botReply]);
+  } catch (error) {
+    console.error("🚨 Axios Error:", error);
+    const errorReply = { sender: "bot", text: "Something went wrong." };
+    setMessages((prev) => [...prev, errorReply]);
+  }
+};
+
 
   return (
     <div className="fixed bottom-5 right-5 z-50 flex flex-col items-end">

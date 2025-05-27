@@ -1,39 +1,35 @@
-import React, { useState } from "react";
-import axios from "axios";
+// src/components/ChatbotSocketIO.js
+import React, { useEffect, useState } from "react";
+import { io } from "socket.io-client";
 
-const ChatBot = () => {
+const SOCKET_SERVER_URL = "https://portfolio-backend-h28u.onrender.com"; // update this
+
+const Chatbot = () => {
+  const [socket, setSocket] = useState(null);
+  const [messages, setMessages] = useState([
+    { sender: "bot", text: "Hello! How can I assist you today?" }
+  ]);
   const [input, setInput] = useState("");
-  const [messages, setMessages] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
 
-  const toggleChat = () => setIsOpen(!isOpen);
+  useEffect(() => {
+    const newSocket = io(SOCKET_SERVER_URL);
+    setSocket(newSocket);
 
-  const sendMessage = async () => {
-  if (!input.trim()) return;
+    newSocket.on("response", (data) => {
+      setMessages((prev) => [...prev, { sender: "bot", text: data.text }]);
+    });
 
-  const userMessage = { sender: "user", text: input };
-  setMessages((prev) => [...prev, userMessage]);
-  setInput("");
+    return () => newSocket.close();
+  }, []);
 
-  try {
-    const res = await axios.post(
-      "https://portfolio-backend-h28u.onrender.com/chat",
-      { message: input },
-      {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
-    const botReply = { sender: "bot", text: res.data.reply };
-    setMessages((prev) => [...prev, botReply]);
-  } catch (error) {
-    console.error("🚨 Axios Error:", error);
-    const errorReply = { sender: "bot", text: "Something went wrong." };
-    setMessages((prev) => [...prev, errorReply]);
-  }
-};
+  const sendMessage = () => {
+    if (!input.trim() || !socket) return;
 
+    setMessages((prev) => [...prev, { sender: "user", text: input }]);
+    socket.emit("user_input", { input });
+    setInput("");
+  };
 
   return (
     <div className="fixed bottom-5 right-5 z-50 flex flex-col items-end">
@@ -72,7 +68,7 @@ const ChatBot = () => {
       )}
 
       <button
-        onClick={toggleChat}
+        onClick={() => setIsOpen(!isOpen)}
         className="w-14 h-14 rounded-full bg-blue-600 text-white text-2xl flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300"
         title="Chat with me"
       >
@@ -82,4 +78,4 @@ const ChatBot = () => {
   );
 };
 
-export default ChatBot;
+export default Chatbot;

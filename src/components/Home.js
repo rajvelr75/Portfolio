@@ -88,7 +88,7 @@ const Home = ({ theme }) => {
                   isLightTheme ? 'text-blue-500' : 'text-blue-400'
                 }`}
               >
-                8.46
+                8.73
               </h4>
               <p>CGPA</p>
             </div>

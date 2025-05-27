@@ -25,7 +25,7 @@ function App() {
       <Projects theme ={theme}/>
       <Academics theme={theme}/>
       <Contact theme= {theme}/>
-      <ChatBot/>
+      <ChatBot theme={theme}/>
     </div>
   );
 }

@@ -39,7 +39,7 @@ const Projects = ({ theme }) => {
 
   return (
     <section
-      className={`py-20 ${isLightTheme ? 'bg-gray-50 text-gray-800' : 'bg-gray-900 text-gray-100'}`}
+      className={`py-20 ${isLightTheme ? 'bg-gray-200 text-gray-800' : 'bg-gray-900 text-gray-100'}`}
       id="projects"
     >
       <div className="container mx-auto px-6">

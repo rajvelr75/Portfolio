@@ -5,6 +5,13 @@ const Experience = ({ theme }) => {
 
   const experiences = [
     {
+      role: 'Website Coordinator',
+      organization: 'SRM University',
+      duration: 'Jan 2025 - Present',
+      logo: '/assets/srm.jpg',
+      description: 'Managed university website content, improved UI/UX, and implemented accessibility features.'
+    },
+    {
       role: 'Web Developer',
       organization: 'LiveWires (Student Club) SRM',
       duration: 'Jan 2024 - Dec 2024',
@@ -17,13 +24,6 @@ const Experience = ({ theme }) => {
       duration: 'Jan 2025 - Mar 2025',
       logo: '/assets/alphaesai.png',
       description: 'Developed an Identity Access Management system using Next.js and TypeScript, demonstrating strong front-end and back-end integration skills',
-    },
-    {
-      role: 'Website Coordinator - Intern',
-      organization: 'SRM University',
-      duration: 'Jan 2025 - Present',
-      logo: '/assets/srm.jpg',
-      description: 'Managed university website content, improved UI/UX, and implemented accessibility features.'
     },
   ];
 

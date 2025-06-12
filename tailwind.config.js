@@ -11,6 +11,7 @@ export default {
       },
       animation: {
         "slide-up": "slide-up 0.3s ease-out",
+        'spin-slow': 'spin 6s linear infinite',
       },
       keyframes: {
         "slide-up": {
